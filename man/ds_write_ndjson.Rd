@@ -23,7 +23,7 @@ the resource type and the ".ndjson" extension.
 }
 \examples{
 \dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect(sc)
+pc <- pathling_connect()
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
 
 # Write the data to a directory of NDJSON files.

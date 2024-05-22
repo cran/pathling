@@ -126,8 +126,8 @@ pathling_disconnect_all()
 }
 \seealso{
 Other context lifecycle functions: 
-\code{\link{pathling_disconnect_all}()},
 \code{\link{pathling_disconnect}()},
+\code{\link{pathling_disconnect_all}()},
 \code{\link{pathling_spark}()}
 }
 \concept{context lifecycle functions}

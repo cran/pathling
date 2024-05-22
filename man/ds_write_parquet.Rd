@@ -4,12 +4,14 @@
 \alias{ds_write_parquet}
 \title{Write FHIR data to Parquet files}
 \usage{
-ds_write_parquet(ds, path)
+ds_write_parquet(ds, path, save_mode = SaveMode$ERROR)
 }
 \arguments{
 \item{ds}{The DataSource object.}
 
 \item{path}{The URI of the directory to write the files to.}
+
+\item{save_mode}{The save mode to use when writing the data.}
 }
 \value{
 No return value, called for side effects only.

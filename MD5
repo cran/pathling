@@ -1,10 +1,10 @@
-920c5a25250b517154d34f5e1229dc57 *DESCRIPTION
+40b0c5a340785d32b8b2d7a74f0f578e *DESCRIPTION
 2d58a0b8b4c6822b28ea2488795bdb67 *NAMESPACE
 e38f10ab31a8a010eb15f5f2084626f3 *NEWS.md
-de5303128cad5ca6ca3b0b07bf501f6c *R/context.R
+ed9d88f9be35e6e7ecb41be35f18a942 *R/context.R
 0925ec6494846b48d746ccae1e8fb3e5 *R/data.R
-4b7a10cbff3b239d26a7c223f45dd5e6 *R/datasource.R
-5c982b95824e99c6d392203ffb0af2d8 *R/dependencies.R
+cc1798b743f438290bbb3afeed4ae636 *R/datasource.R
+5995f9ffd1e6dcb707b8bf7c657301ff *R/dependencies.R
 37552e2bb558f9bb31c227325e2fa3c1 *R/encoding.R
 3778265a6d6cf4cf0e8258db0791443c *R/etc.R
 ba7cbf45cd23e7a90d76466571e3ec48 *R/fhir.R
@@ -13,7 +13,7 @@ ba7cbf45cd23e7a90d76466571e3ec48 *R/fhir.R
 9749b7c30b4e6fb2c2fb45d725bbfe6e *R/rexport-sparklyr.R
 c433d1b936abb95251255758fe8d7499 *R/udfs.R
 9975877847026927a4223108ed7d00c6 *R/utils.R
-8079504d5d3156261a8a1c2e5cdbda08 *README.md
+03b45a2b1261925e1c01eff003323be4 *README.md
 0fd484e6fc813bba6134f032c8ce3e07 *data/conditions.rda
 75c5475fe21b1d79ae042cd42612bc38 *inst/CITATION
 df05a37b4c59100d70c416fc9bf18e70 *inst/extdata/bundle-xml/Bennett146_Swaniawski813_704c9750-f6e6-473b-ee83-fbd48e07fe3f.xml
@@ -34,6 +34,7 @@ cf788f717c15a5873b2e70fa52445773 *man/ImportMode.Rd
 40911b718ea20a4d1302a121132cb989 *man/MimeType.Rd
 4df64c13bc728c5c96e81f46e4a8297f *man/PropertyType.Rd
 41843a10ae350573cfc5e2a3084fb043 *man/SNOMED_URI.Rd
+3d16e10cf084e2b4b13e674159f9490d *man/SaveMode.Rd
 19edfa60019d37c2663b2bbe3b041683 *man/StorageType.Rd
 740d72e063fb2c24b093d8ab7a993224 *man/Version.Rd
 3355d62ce47bb81c3cc04261b208a2c1 *man/conditions.Rd
@@ -41,10 +42,10 @@ cf788f717c15a5873b2e70fa52445773 *man/ImportMode.Rd
 30fd27a1c2908c108de00ad033cf98e6 *man/ds_extract.Rd
 14a72220946b2fd593c931dcd7d38e62 *man/ds_read.Rd
 a647857c98089d04622ecf21d3d33d93 *man/ds_write_delta.Rd
-22a438ca35b7ce344c95ed153fece03a *man/ds_write_ndjson.Rd
-4c87d5c6e29edbe7d3dcd829a8fe005e *man/ds_write_parquet.Rd
+0cd9fb90dce16c2b6cf7bff80cb2d1a6 *man/ds_write_ndjson.Rd
+af9443a3cfa7996662f6f4d0c58ddac6 *man/ds_write_parquet.Rd
 edc1b7ca9af848d9787d4ce498e7e51a *man/ds_write_tables.Rd
-ca6c39658d3b66ff1d48fa3becd20a98 *man/pathling_connect.Rd
+09d6240dd104e79c289557d400a5d412 *man/pathling_connect.Rd
 6b3d078017404c5b6bd4e9715a1e0b8f *man/pathling_disconnect.Rd
 d5369c1e264361675527d9976af382ae *man/pathling_disconnect_all.Rd
 878cd5505ce6aac2071c58417be62db9 *man/pathling_encode.Rd
@@ -59,7 +60,7 @@ c99a7409eb4469f09de55d45e0823558 *man/pathling_read_delta.Rd
 eddd736db31fe5485adf2714b99bffd7 *man/pathling_read_ndjson.Rd
 b68a0ae756a5ca666d0211a951a6654b *man/pathling_read_parquet.Rd
 f5e8037d514118e4848c769a46bdbc91 *man/pathling_read_tables.Rd
-f907bfb40e26a0b651c97e8b734230a7 *man/pathling_spark.Rd
+ba8ca52d70b48489af09fb6747bc9028 *man/pathling_spark.Rd
 c7fef813a8837d72acd9ed53f6b4846d *man/pathling_spark_info.Rd
 504d52de8b42da1da265f276a60db7e3 *man/pathling_version.Rd
 b7577d08a49448ffb5a469fba1549e59 *man/reexports.Rd

@@ -4,12 +4,14 @@
 \alias{ds_write_ndjson}
 \title{Write FHIR data to NDJSON files}
 \usage{
-ds_write_ndjson(ds, path, file_name_mapper = NULL)
+ds_write_ndjson(ds, path, save_mode = SaveMode$ERROR, file_name_mapper = NULL)
 }
 \arguments{
 \item{ds}{The DataSource object.}
 
 \item{path}{The URI of the directory to write the files to.}
+
+\item{save_mode}{The save mode to use when writing the data.}
 
 \item{file_name_mapper}{An optional function that can be used to customise the mapping 
 of the resource type to the file name. Currently not implemented.}

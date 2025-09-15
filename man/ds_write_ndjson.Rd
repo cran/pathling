@@ -24,18 +24,16 @@ Writes the data from a data source to a directory of NDJSON files. The files wil
 the resource type and the ".ndjson" extension.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
 
 # Write the data to a directory of NDJSON files.
 data_source \%>\% ds_write_ndjson(file.path(tempdir(), 'ndjson'))
+}
 
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#ndjson-1}{Pathling documentation - Writing NDJSON}
+\href{https://pathling.csiro.au/docs/libraries/io#ndjson-1}{Pathling documentation - Writing NDJSON}
 
 Other data sink functions: 
 \code{\link{ds_write_delta}()},

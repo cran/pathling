@@ -22,11 +22,9 @@ The resources are read from the package example data in the \code{extdata/parque
 Currently the following resources are available: 'Patient' and 'Condition'.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 pathling_example_resource(pc, 'Condition')
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 Other example functions: 

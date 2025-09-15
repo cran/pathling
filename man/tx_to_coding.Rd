@@ -26,17 +26,14 @@ The Coding struct Column can be used as an input to terminology functions such a
 \code{!!}, e.g: \code{!!tx_to_coding(CODE, SNOMED_URI)}.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 condition_df <- pathling_spark(pc) \%>\% sparklyr::copy_to(conditions)
 
 # Convert codes to ICD-10 codings.
 condition_df \%>\% sparklyr::mutate(
     icdCoding = !!tx_to_coding(CODE, "http://hl7.org/fhir/sid/icd-10"), .keep = 'none'
 )
-
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \href{https://hl7.org/fhir/R4/datatypes.html#Coding}{FHIR R4 - Coding}

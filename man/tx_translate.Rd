@@ -35,9 +35,7 @@ may be more than one target concept for each input concept. Only the translation
 the specified equivalences are returned.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
-
+\dontrun{
 # Translates the codings of the Condition `code` using a SNOMED implicit concept map.
 pc \%>\% pathling_example_resource('Condition') \%>\%
     sparklyr::mutate(
@@ -45,9 +43,7 @@ pc \%>\% pathling_example_resource('Condition') \%>\%
          translation = !!tx_translate(code[['coding']],
                  'http://snomed.info/sct?fhir_cm=900000000000527005'),
          .keep='none')
- 
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \code{\link{Equivalence}}

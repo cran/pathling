@@ -19,18 +19,16 @@ A DataSource object that can be used to run queries against the data.
 where the table names are the resource type codes.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
-spark <- pathling_spark(pc)
+\dontrun{
 data_source <- pc \%>\% pathling_read_tables()
 data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#managed-tables}{Pathling documentation - Reading managed tables}
+\href{https://pathling.csiro.au/docs/libraries/io#managed-tables}{Pathling documentation - Reading managed tables}
 
 Other data source functions: 
+\code{\link{pathling_read_bulk}()},
 \code{\link{pathling_read_bundles}()},
 \code{\link{pathling_read_datasets}()},
 \code{\link{pathling_read_delta}()},

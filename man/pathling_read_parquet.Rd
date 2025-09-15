@@ -19,17 +19,16 @@ A DataSource object that can be used to run queries against the data.
 Each table must be named according to the name of the resource type that it stores.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 data_source <- pc \%>\% pathling_read_parquet(pathling_examples('parquet'))
 data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#parquet}{Pathling documentation - Reading Parquet}
+\href{https://pathling.csiro.au/docs/libraries/io#parquet}{Pathling documentation - Reading Parquet}
 
 Other data source functions: 
+\code{\link{pathling_read_bulk}()},
 \code{\link{pathling_read_bundles}()},
 \code{\link{pathling_read_datasets}()},
 \code{\link{pathling_read_delta}()},

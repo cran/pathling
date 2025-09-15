@@ -18,11 +18,9 @@ A Spark DataFrame containing the data for the given resource type.
 Get data for a resource type from a data source
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
 data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
 data_source \%>\% ds_read('Condition') \%>\% sparklyr::sdf_nrow()
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }

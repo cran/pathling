@@ -5,7 +5,7 @@
 \alias{SaveMode}
 \title{SaveMode}
 \format{
-An object of class \code{list} of length 4.
+An object of class \code{list} of length 5.
 }
 \usage{
 SaveMode
@@ -17,6 +17,7 @@ The following save modes are supported:
   \item{\code{APPEND}: Append the new data to the existing data.}
   \item{\code{IGNORE}: Only save the data if the file does not already exist.}
   \item{\code{ERROR}: Raise an error if the file already exists.}
+  \item{\code{MERGE}: Merge the new data with the existing data based on resource ID.}
 }
 }
 \keyword{datasets}

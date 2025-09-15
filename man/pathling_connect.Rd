@@ -112,17 +112,14 @@ It is assumed that the Pathling library API JAR is already on the classpath. If 
 your own cluster, make sure it is on the list of packages.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontrun{
 # Create PathlingContext for an existing Spark connecton.
-sc <- sparklyr::spark_connect(master = "local")
 pc <- pathling_connect(spark = sc)
-pathling_disconnect(pc)
 
 # Create PathlingContext with a new Spark connection.
 pc <- pathling_connect()
 spark <- pathling_spark(pc)
-pathling_disconnect_all()
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 Other context lifecycle functions: 

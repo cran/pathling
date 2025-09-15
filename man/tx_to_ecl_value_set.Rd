@@ -17,10 +17,10 @@ Converts a SNOMED CT ECL expression into a FHIR ValueSet URI. It can be used wit
 `\code{\link{tx_member_of}} function.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontrun{
 # Example usage of tx_to_ecl_value_set function
 tx_to_ecl_value_set('<<373265006 |Analgesic (substance)|')
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \href{https://terminology.hl7.org/SNOMEDCT.html#snomed-ct-implicit-value-sets}{Using SNOMED CT with HL7 Standards - Implicit Value Sets}

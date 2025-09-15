@@ -25,17 +25,16 @@ resource type code and must have the ".ndjson" extension, e.g. "Patient.ndjson" 
 "Observation.ndjson".
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
 data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#ndjson}{Pathling documentation - Reading NDJSON}
+\href{https://pathling.csiro.au/docs/libraries/io#ndjson}{Pathling documentation - Reading NDJSON}
 
 Other data source functions: 
+\code{\link{pathling_read_bulk}()},
 \code{\link{pathling_read_bundles}()},
 \code{\link{pathling_read_datasets}()},
 \code{\link{pathling_read_delta}()},

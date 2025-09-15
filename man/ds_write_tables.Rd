@@ -4,14 +4,14 @@
 \alias{ds_write_tables}
 \title{Write FHIR data to managed tables}
 \usage{
-ds_write_tables(ds, schema = NULL, import_mode = ImportMode$OVERWRITE)
+ds_write_tables(ds, schema = NULL, save_mode = SaveMode$OVERWRITE)
 }
 \arguments{
 \item{ds}{The DataSource object.}
 
 \item{schema}{The name of the schema to write the tables to.}
 
-\item{import_mode}{The import mode to use when writing the data - "overwrite" will overwrite any 
+\item{save_mode}{The save mode to use when writing the data - "overwrite" will overwrite any 
 existing data, "merge" will merge the new data with the existing data based on resource ID.}
 }
 \value{
@@ -21,7 +21,7 @@ No return value, called for side effects only.
 Writes the data from a data source to a set of tables in the Spark catalog.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 # Create a temporary warehouse location, which will be used when we call ds_write_tables().
 temp_dir_path <- tempfile()
 dir.create(temp_dir_path)
@@ -37,16 +37,16 @@ pc <- pathling_connect(sc)
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
 
 # Write the data to a set of Spark tables in the 'default' database.
-data_source \%>\% ds_write_tables("default", import_mode = ImportMode$MERGE)
+data_source \%>\% ds_write_tables("default", save_mode = SaveMode$MERGE)
 
 pathling_disconnect(pc)
 unlink(temp_dir_path, recursive = TRUE)
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#managed-tables-1}{Pathling documentation - Writing managed tables}
+\href{https://pathling.csiro.au/docs/libraries/io#managed-tables-1}{Pathling documentation - Writing managed tables}
 
-\code{\link{ImportMode}}
+\code{\link{SaveMode}}
 
 Other data sink functions: 
 \code{\link{ds_write_delta}()},

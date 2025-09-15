@@ -20,7 +20,7 @@ No return value, called for side effects only.
 Writes the data from a data source to a directory of Parquet files.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
 
@@ -31,7 +31,7 @@ pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#parquet-1}{Pathling documentation - Writing Parquet}
+\href{https://pathling.csiro.au/docs/libraries/io#parquet-1}{Pathling documentation - Writing Parquet}
 
 Other data sink functions: 
 \code{\link{ds_write_delta}()},

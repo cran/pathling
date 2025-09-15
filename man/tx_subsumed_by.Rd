@@ -19,7 +19,7 @@ Takes two Coding columns as input. Returns a Column that contains a Boolean valu
 indicating whether the left Coding is subsumed by the right Coding.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
 
 # Test the codings of the Condition `code` for subsumption by a SNOMED CT code.

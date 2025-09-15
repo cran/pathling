@@ -24,16 +24,13 @@ The Coding struct Column can be used as an input to terminology functions such a
 \code{!!}, e.g: \code{!!tx_to_coding(CODE, SNOMED_URI)}.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 condition_df <- pathling_spark(pc) \%>\% sparklyr::copy_to(conditions)
 
 # Convert codes to LOINC codings.
 # Equivalent to: tx_to_coding(CODE, "http://loinc.org")
 condition_df \%>\% sparklyr::mutate(loincCoding = !!tx_to_loinc_coding(CODE), .keep = 'none')
-
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 Other terminology helpers: 

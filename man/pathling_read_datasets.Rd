@@ -20,19 +20,18 @@ Creates an immutable, ad-hoc data source from a named list of Spark datasets ind
 resource type codes.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 patient_df <- pc \%>\% pathling_example_resource('Patient')
 condition_df <- pc \%>\% pathling_example_resource('Condition')
 data_source <- pc \%>\% pathling_read_datasets(list(Patient = patient_df, Condition = condition_df))
 data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#datasets}{Pathling documentation - Reading datasets}
+\href{https://pathling.csiro.au/docs/libraries/io#datasets}{Pathling documentation - Reading datasets}
 
 Other data source functions: 
+\code{\link{pathling_read_bulk}()},
 \code{\link{pathling_read_bundles}()},
 \code{\link{pathling_read_delta}()},
 \code{\link{pathling_read_ndjson}()},

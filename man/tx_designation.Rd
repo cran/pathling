@@ -23,19 +23,16 @@ not provided, then all designations with the specified type are returned regardl
 their language.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
-
+\dontrun{
 # Get the (first) SNOMED CT "Fully specified name" ('900000000000003001')  
 # for the first coding of the Condition resource, in the 'en' language.
-pc \%>\% pathling_example_resource('Condition') \%>\% 
+pc \%>\% pathling_example_resource('Condition') \%>\%
      sparklyr::mutate(
             id, 
             designation = (!!tx_designation(code[['coding']][[0]], 
                      !!tx_to_snomed_coding('900000000000003001'), language = 'en'))[[0]], 
             .keep='none')
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \href{https://pathling.csiro.au/docs/libraries/terminology#retrieving-designations}{Pathling documentation - Retrieving designations}

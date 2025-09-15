@@ -1,4 +1,4 @@
-#  Copyright 2023 Commonwealth Scientific and Industrial Research
+#  Copyright © 2018-2025 Commonwealth Scientific and Industrial Research
 #  Organisation (CSIRO) ABN 41 687 119 230.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -88,16 +88,14 @@ StorageType <- list(
 #'
 #' @export
 #' 
-#' @examplesIf pathling_is_spark_installed()
+#' @examples \dontrun{
 #' # Create PathlingContext for an existing Spark connecton.
-#' sc <- sparklyr::spark_connect(master = "local")
 #' pc <- pathling_connect(spark = sc)
-#' pathling_disconnect(pc)
 #' 
 #' # Create PathlingContext with a new Spark connection.
 #' pc <- pathling_connect()
 #' spark <- pathling_spark(pc)
-#' pathling_disconnect_all()
+#' }
 pathling_connect <- function(
     spark = NULL,
     max_nesting_level = 3,
@@ -135,6 +133,7 @@ pathling_connect <- function(
 
   new_spark_connection <- function() {
     sparklyr::spark_connect(master = "local[*]", config = list("sparklyr.shell.conf" = c(
+        "spark.sql.mapKeyDedupPolicy=LAST_WIN",
         "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension",
         "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog"
     )), version = spark_info$spark_version)

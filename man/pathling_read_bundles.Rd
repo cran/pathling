@@ -22,18 +22,17 @@ A DataSource object that can be used to run queries against the data.
 Creates a data source from a directory containing FHIR bundles.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
+\dontrun{
 data_source <- pc \%>\% pathling_read_bundles(pathling_examples('bundle-xml'),
      c("Patient", "Observation"), MimeType$FHIR_XML)
 data_source \%>\% ds_read('Observation') \%>\% sparklyr::sdf_nrow()
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
-\href{https://pathling.csiro.au/docs/libraries/fhirpath-query#fhir-bundles}{Pathling documentation - Reading Bundles}
+\href{https://pathling.csiro.au/docs/libraries/io#fhir-bundles}{Pathling documentation - Reading Bundles}
 
 Other data source functions: 
+\code{\link{pathling_read_bulk}()},
 \code{\link{pathling_read_datasets}()},
 \code{\link{pathling_read_delta}()},
 \code{\link{pathling_read_ndjson}()},

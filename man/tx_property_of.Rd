@@ -31,9 +31,7 @@ types of the properties. Primitive FHIR types are mapped to their corresponding 
 Complex types are mapped to their corresponding structs.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
-
+\dontrun{
 # Get the (first) value of the `inactive` property of the first coding of the Condition resource.
 pc \%>\% pathling_example_resource('Condition') \%>\%
      sparklyr::mutate(id, 
@@ -41,9 +39,7 @@ pc \%>\% pathling_example_resource('Condition') \%>\%
                                  "inactive",PropertyType$BOOLEAN))[[0]], 
          .keep='none'
      )
-
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \code{\link{PropertyType}}

@@ -19,9 +19,7 @@ Takes two Coding columns as input. Returns a Column that contains a Boolean valu
 indicating whether the left Coding subsumes the right Coding.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
-
+\dontrun{
 # Test the codings of the Condition `code` for subsumption of a SNOMED CT code.
 pc \%>\% pathling_example_resource('Condition') \%>\%
     sparklyr::mutate(
@@ -29,9 +27,7 @@ pc \%>\% pathling_example_resource('Condition') \%>\%
          subsumes = !!tx_subsumes(code[['coding']],
              !!tx_to_snomed_coding('444814009')),
          .keep='none')
- 
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \href{https://pathling.csiro.au/docs/libraries/terminology#subsumption-testing}{Pathling documentation - Subsumption testing}

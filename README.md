@@ -30,7 +30,8 @@ documentation.
 
 ### Running on Databricks
 
-See [Pathling Databricks installation](https://pathling.csiro.au/docs/libraries/installation/databricks) for instructions on how to install
+See [Pathling Databricks installation](https://pathling.csiro.au/docs/libraries/installation/databricks)
+for instructions on how to install
 the Pathling R API on Databricks.
 
 ## Getting started
@@ -94,7 +95,7 @@ starting points:
 - `?pathling_connect` for information about creating and configuring Pathling
   contexts.
 - `?tx_display` and `?tx_to_snomed_coding` for terminology functions.
-- `?ds_aggregate` and `?ds_extract` for pathling queries.
+- `?ds_view` for executing SQL on FHIR views.
 - `?pathling_encode` for encoding of FHIR resources into data frames.
 - `?pathling_read_ndjson` and `?ds_write_ndjson` for reading and writing FHIR
   resources in various formats.
@@ -121,7 +122,6 @@ The following packages may be needed to build the dependencies of `devtools`.
     brew install libtiff
     brew install libgit2
 
-
 To setup the dev environment, run the following commands:
 
 Use miniconda to install R in the activated dev environment:
@@ -133,7 +133,7 @@ Install the `devtools` R package:
 
     Rscript --vanilla -e 'install.packages("devtools", repos="https://cloud.r-project.org/")'
 
-Pathling is copyright © 2018-2023, Commonwealth Scientific and Industrial
+Pathling is copyright © 2018-2025, Commonwealth Scientific and Industrial
 Research Organisation
 (CSIRO) ABN 41 687 119 230. Licensed under
 the [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0).

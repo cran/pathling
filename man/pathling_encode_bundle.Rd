@@ -26,7 +26,7 @@ Takes a dataframe with string representations of FHIR bundles in the given colum
 a dataframe of encoded resources.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
 json_resources_df <- pathling_spark(pc) \%>\% 
      sparklyr::spark_read_text(path=system.file('extdata','bundle-xml', package='pathling'), 

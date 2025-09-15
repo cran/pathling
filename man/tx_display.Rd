@@ -20,18 +20,14 @@ Takes a Coding column as its input. Returns a Column that contains the canonical
 name associated with the given code.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pc <- pathling_connect()
-
+\dontrun{
 # Get the display name of the first coding of the Condition resource, with the default language.
 pc \%>\% pathling_example_resource('Condition') \%>\%
      sparklyr::mutate(
          id, 
          display = !!tx_display(code[['coding']][[0]]), 
          .keep='none')
-
-pathling_disconnect(pc)
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 \href{https://pathling.csiro.au/docs/libraries/terminology#multi-language-support}{Pathling documentation - Multi-language support}

@@ -26,7 +26,7 @@ Takes a Spark DataFrame with string representations of FHIR resources in the giv
 encodes the resources of the given types as Spark DataFrame.
 }
 \examples{
-\dontshow{if (pathling_is_spark_installed()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
 json_resources_df <- pathling_spark(pc) \%>\% 
      sparklyr::spark_read_text(path=system.file('extdata','ndjson', 'Condition.ndjson', 

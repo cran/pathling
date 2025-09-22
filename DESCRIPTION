@@ -1,7 +1,7 @@
 Package: pathling
 Type: Package
 Title: A Library for using 'Pathling'
-Version: 8.0.2
+Version: 8.1.0
 Authors@R: 
     c(
       person("Australian e-Health Research Centre, CSIRO", 
@@ -29,16 +29,16 @@ Suggests: testthat(>= 3.2.1.1)
 Config/testthat/edition: 3
 RoxygenNote: 7.2.3
 SystemRequirements: Spark: 3.5.x
-Config/pathling/Version: 8.0.2
+Config/pathling/Version: 8.1.0
 Config/pathling/SparkVersion: 3.5.6
 Config/pathling/ScalaVersion: 2.12
 Config/pathling/HadoopMajorVersion: 3
 Config/pathling/HadoopVersion: 3.3.4
 Config/pathling/DeltaVersion: 3.3.2
 NeedsCompilation: yes
-Packaged: 2025-09-12 02:21:42 UTC; runner
+Packaged: 2025-09-22 09:40:22 UTC; runner
 Author: Australian e-Health Research Centre, CSIRO [cph, cre],
   Piotr Szul [aut],
   John Grimes [aut]
 Repository: CRAN
-Date/Publication: 2025-09-15 09:20:02 UTC
+Date/Publication: 2025-09-22 11:00:02 UTC

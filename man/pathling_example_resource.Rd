@@ -18,12 +18,12 @@ A Spark DataFrame containing the resource data.
 Reads a FHIR resource dataframe from the package example data.
 }
 \details{
-The resources are read from the package example data in the \code{extdata/parquet} directory. 
+The resources are read from the package example data in the \code{extdata/parquet} directory.
 Currently the following resources are available: 'Patient' and 'Condition'.
 }
 \examples{
 \dontrun{
-pathling_example_resource(pc, 'Condition')
+pathling_example_resource(pc, "Condition")
 }
 }
 \seealso{

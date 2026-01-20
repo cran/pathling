@@ -20,9 +20,9 @@ A Column containing a Coding struct.
 Converts a Column containing codes into a Column that contains a Coding struct.
 }
 \details{
-The Coding struct Column can be used as an input to terminology functions such as 
-\code{\link{tx_member_of}} and \code{\link{tx_translate}}. Please note that inside 
-\code{sparklyr} verbs such as \code{mutate} the functions calls need to be preceded with 
+The Coding struct Column can be used as an input to terminology functions such as
+\code{\link{tx_member_of}} and \code{\link{tx_translate}}. Please note that inside
+\code{sparklyr} verbs such as \code{mutate} the functions calls need to be preceded with
 \code{!!}, e.g: \code{!!tx_to_coding(CODE, SNOMED_URI)}.
 }
 \examples{
@@ -31,7 +31,7 @@ condition_df <- pathling_spark(pc) \%>\% sparklyr::copy_to(conditions)
 
 # Convert codes to ICD-10 codings.
 condition_df \%>\% sparklyr::mutate(
-    icdCoding = !!tx_to_coding(CODE, "http://hl7.org/fhir/sid/icd-10"), .keep = 'none'
+  icdCoding = !!tx_to_coding(CODE, "http://hl7.org/fhir/sid/icd-10"), .keep = "none"
 )
 }
 }

@@ -11,11 +11,12 @@ ds_write_delta(ds, path, save_mode = SaveMode$OVERWRITE)
 
 \item{path}{The URI of the directory to write the files to.}
 
-\item{save_mode}{The save mode to use when writing the data - "overwrite" will overwrite any 
+\item{save_mode}{The save mode to use when writing the data - "overwrite" will overwrite any
 existing data, "merge" will merge the new data with the existing data based on resource ID.}
 }
 \value{
-No return value, called for side effects only.
+A list with element \code{file_infos}, containing a list of files created.
+  Each file has \code{fhir_resource_type} and \code{absolute_url}.
 }
 \description{
 Writes the data from a data source to a directory of Delta files.
@@ -23,10 +24,10 @@ Writes the data from a data source to a directory of Delta files.
 \examples{
 \dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
-data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
+data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
 
 # Write the data to a directory of Delta files.
-data_source \%>\% ds_write_delta(file.path(tempdir(), 'delta'), save_mode = SaveMode$OVERWRITE)
+data_source \%>\% ds_write_delta(file.path(tempdir(), "delta"), save_mode = SaveMode$OVERWRITE)
 
 pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}

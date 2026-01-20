@@ -28,10 +28,11 @@ encodes the resources of the given types as Spark DataFrame.
 \examples{
 \dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
-json_resources_df <- pathling_spark(pc) \%>\% 
-     sparklyr::spark_read_text(path=system.file('extdata','ndjson', 'Condition.ndjson', 
-             package='pathling'))
-pc \%>\% pathling_encode(json_resources_df, 'Condition')
+json_resources_df <- pathling_spark(pc) \%>\%
+  sparklyr::spark_read_text(path = system.file("extdata", "ndjson", "Condition.ndjson",
+    package = "pathling"
+  ))
+pc \%>\% pathling_encode(json_resources_df, "Condition")
 pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}
 }

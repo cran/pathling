@@ -21,10 +21,12 @@ resource type codes.
 }
 \examples{
 \dontrun{
-patient_df <- pc \%>\% pathling_example_resource('Patient')
-condition_df <- pc \%>\% pathling_example_resource('Condition')
+patient_df <- pc \%>\% pathling_example_resource("Patient")
+condition_df <- pc \%>\% pathling_example_resource("Condition")
 data_source <- pc \%>\% pathling_read_datasets(list(Patient = patient_df, Condition = condition_df))
-data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
+data_source \%>\%
+  ds_read("Patient") \%>\%
+  sparklyr::sdf_nrow()
 }
 }
 \seealso{

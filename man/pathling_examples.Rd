@@ -16,7 +16,7 @@ The path to the examples data.
 Construct the path to the package example data in a platform-independent way.
 }
 \examples{
-pathling_examples('ndjson', 'Condition.ndjson')
+pathling_examples("ndjson", "Condition.ndjson")
 }
 \seealso{
 Other example functions: 

@@ -23,13 +23,17 @@ indicating whether the left Coding is subsumed by the right Coding.
 pc <- pathling_connect()
 
 # Test the codings of the Condition `code` for subsumption by a SNOMED CT code.
-pc \%>\% pathling_example_resource('Condition') \%>\%
-    sparklyr::mutate(
-         id,
-         is_subsumed_by = !!tx_subsumed_by(code[['coding']],
-             !!tx_to_snomed_coding('444814009')),
-         .keep='none')
- 
+pc \%>\%
+  pathling_example_resource("Condition") \%>\%
+  sparklyr::mutate(
+    id,
+    is_subsumed_by = !!tx_subsumed_by(
+      code[["coding"]],
+      !!tx_to_snomed_coding("444814009")
+    ),
+    .keep = "none"
+  )
+
 pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}
 }

@@ -21,12 +21,16 @@ indicating whether the left Coding subsumes the right Coding.
 \examples{
 \dontrun{
 # Test the codings of the Condition `code` for subsumption of a SNOMED CT code.
-pc \%>\% pathling_example_resource('Condition') \%>\%
-    sparklyr::mutate(
-         id,
-         subsumes = !!tx_subsumes(code[['coding']],
-             !!tx_to_snomed_coding('444814009')),
-         .keep='none')
+pc \%>\%
+  pathling_example_resource("Condition") \%>\%
+  sparklyr::mutate(
+    id,
+    subsumes = !!tx_subsumes(
+      code[["coding"]],
+      !!tx_to_snomed_coding("444814009")
+    ),
+    .keep = "none"
+  )
 }
 }
 \seealso{

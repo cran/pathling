@@ -20,14 +20,16 @@ that it contains. Currently not implemented.}
 A DataSource object that can be used to run queries against the data.
 }
 \description{
-Creates a data source from a directory containing NDJSON files. The files must be named with the 
-resource type code and must have the ".ndjson" extension, e.g. "Patient.ndjson" or 
+Creates a data source from a directory containing NDJSON files. The files must be named with the
+resource type code and must have the ".ndjson" extension, e.g. "Patient.ndjson" or
 "Observation.ndjson".
 }
 \examples{
 \dontrun{
-data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
-data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
+data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
+data_source \%>\%
+  ds_read("Patient") \%>\%
+  sparklyr::sdf_nrow()
 }
 }
 \seealso{

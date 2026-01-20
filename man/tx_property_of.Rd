@@ -33,12 +33,15 @@ Complex types are mapped to their corresponding structs.
 \examples{
 \dontrun{
 # Get the (first) value of the `inactive` property of the first coding of the Condition resource.
-pc \%>\% pathling_example_resource('Condition') \%>\%
-     sparklyr::mutate(id, 
-         is_inavtive = (!!tx_property_of(code[['coding']][[0]], 
-                                 "inactive",PropertyType$BOOLEAN))[[0]], 
-         .keep='none'
-     )
+pc \%>\%
+  pathling_example_resource("Condition") \%>\%
+  sparklyr::mutate(id,
+    is_inavtive = (!!tx_property_of(
+      code[["coding"]][[0]],
+      "inactive", PropertyType$BOOLEAN
+    ))[[0]],
+    .keep = "none"
+  )
 }
 }
 \seealso{

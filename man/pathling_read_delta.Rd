@@ -20,8 +20,10 @@ Each table must be named according to the name of the resource type that it stor
 }
 \examples{
 \dontrun{
-data_source <- pc \%>\% pathling_read_delta(pathling_examples('delta'))
-data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
+data_source <- pc \%>\% pathling_read_delta(pathling_examples("delta"))
+data_source \%>\%
+  ds_read("Patient") \%>\%
+  sparklyr::sdf_nrow()
 }
 }
 \seealso{

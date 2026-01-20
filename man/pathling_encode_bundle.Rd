@@ -28,11 +28,14 @@ a dataframe of encoded resources.
 \examples{
 \dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
-json_resources_df <- pathling_spark(pc) \%>\% 
-     sparklyr::spark_read_text(path=system.file('extdata','bundle-xml', package='pathling'), 
-         whole = TRUE)
-pc \%>\% pathling_encode_bundle(json_resources_df, 'Condition',
-     input_type = MimeType$FHIR_XML, column = 'contents')
+json_resources_df <- pathling_spark(pc) \%>\%
+  sparklyr::spark_read_text(
+    path = system.file("extdata", "bundle-xml", package = "pathling"),
+    whole = TRUE
+  )
+pc \%>\% pathling_encode_bundle(json_resources_df, "Condition",
+  input_type = MimeType$FHIR_XML, column = "contents"
+)
 pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}
 }

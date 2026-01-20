@@ -13,13 +13,13 @@ tx_to_ecl_value_set(ecl)
 The ValueSet URI.
 }
 \description{
-Converts a SNOMED CT ECL expression into a FHIR ValueSet URI. It can be used with the 
+Converts a SNOMED CT ECL expression into a FHIR ValueSet URI. It can be used with the
 `\code{\link{tx_member_of}} function.
 }
 \examples{
 \dontrun{
 # Example usage of tx_to_ecl_value_set function
-tx_to_ecl_value_set('<<373265006 |Analgesic (substance)|')
+tx_to_ecl_value_set("<<373265006 |Analgesic (substance)|")
 }
 }
 \seealso{

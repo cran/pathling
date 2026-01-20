@@ -11,11 +11,12 @@ ds_write_tables(ds, schema = NULL, save_mode = SaveMode$OVERWRITE)
 
 \item{schema}{The name of the schema to write the tables to.}
 
-\item{save_mode}{The save mode to use when writing the data - "overwrite" will overwrite any 
+\item{save_mode}{The save mode to use when writing the data - "overwrite" will overwrite any
 existing data, "merge" will merge the new data with the existing data based on resource ID.}
 }
 \value{
-No return value, called for side effects only.
+A list with element \code{file_infos}, containing a list of files created.
+  Each file has \code{fhir_resource_type} and \code{absolute_url}.
 }
 \description{
 Writes the data from a data source to a set of tables in the Spark catalog.
@@ -34,7 +35,7 @@ sc <- sparklyr::spark_connect(master = "local[*]", config = list(
 ), version = pathling_spark_info()$spark_version)
 
 pc <- pathling_connect(sc)
-data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
+data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
 
 # Write the data to a set of Spark tables in the 'default' database.
 data_source \%>\% ds_write_tables("default", save_mode = SaveMode$MERGE)

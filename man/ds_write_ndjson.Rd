@@ -13,22 +13,23 @@ ds_write_ndjson(ds, path, save_mode = SaveMode$ERROR, file_name_mapper = NULL)
 
 \item{save_mode}{The save mode to use when writing the data.}
 
-\item{file_name_mapper}{An optional function that can be used to customise the mapping 
+\item{file_name_mapper}{An optional function that can be used to customise the mapping
 of the resource type to the file name. Currently not implemented.}
 }
 \value{
-No return value, called for side effects only.
+A list with element \code{file_infos}, containing a list of files created.
+  Each file has \code{fhir_resource_type} and \code{absolute_url}.
 }
 \description{
-Writes the data from a data source to a directory of NDJSON files. The files will be named using 
+Writes the data from a data source to a directory of NDJSON files. The files will be named using
 the resource type and the ".ndjson" extension.
 }
 \examples{
 \dontrun{
-data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
+data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
 
 # Write the data to a directory of NDJSON files.
-data_source \%>\% ds_write_ndjson(file.path(tempdir(), 'ndjson'))
+data_source \%>\% ds_write_ndjson(file.path(tempdir(), "ndjson"))
 }
 
 }

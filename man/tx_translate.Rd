@@ -37,12 +37,16 @@ the specified equivalences are returned.
 \examples{
 \dontrun{
 # Translates the codings of the Condition `code` using a SNOMED implicit concept map.
-pc \%>\% pathling_example_resource('Condition') \%>\%
-    sparklyr::mutate(
-         id,
-         translation = !!tx_translate(code[['coding']],
-                 'http://snomed.info/sct?fhir_cm=900000000000527005'),
-         .keep='none')
+pc \%>\%
+  pathling_example_resource("Condition") \%>\%
+  sparklyr::mutate(
+    id,
+    translation = !!tx_translate(
+      code[["coding"]],
+      "http://snomed.info/sct?fhir_cm=900000000000527005"
+    ),
+    .keep = "none"
+  )
 }
 }
 \seealso{

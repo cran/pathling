@@ -68,7 +68,7 @@ pathling_read_bulk(
 A DataSource object that can be used to run queries against the data.
 }
 \description{
-Creates a data source by downloading data from a FHIR server that implements the FHIR Bulk Data 
+Creates a data source by downloading data from a FHIR server that implements the FHIR Bulk Data
 Access API.
 }
 \examples{
@@ -83,7 +83,7 @@ data_source <- pc \%>\% pathling_read_bulk(
 
 # Group-level export with filters
 data_source <- pc \%>\% pathling_read_bulk(
-  fhir_endpoint_url = "https://bulk-data.smarthealthit.org/fhir", 
+  fhir_endpoint_url = "https://bulk-data.smarthealthit.org/fhir",
   output_dir = "/tmp/bulk_export",
   group_id = "group-1",
   types = c("Patient", "Observation"),
@@ -94,9 +94,9 @@ data_source <- pc \%>\% pathling_read_bulk(
 # Patient-level export with auth
 data_source <- pc \%>\% pathling_read_bulk(
   fhir_endpoint_url = "https://bulk-data.smarthealthit.org/fhir",
-  output_dir = "/tmp/bulk_export", 
+  output_dir = "/tmp/bulk_export",
   patients = c(
-    "123",  # Just the ID portion
+    "123", # Just the ID portion
     "456"
   ),
   auth_config = list(

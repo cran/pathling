@@ -15,13 +15,15 @@ pathling_read_tables(pc, schema = NULL)
 A DataSource object that can be used to run queries against the data.
 }
 \description{
-\code{pathling_read_tables()} creates a data source from a set of Spark tables, 
+\code{pathling_read_tables()} creates a data source from a set of Spark tables,
 where the table names are the resource type codes.
 }
 \examples{
 \dontrun{
 data_source <- pc \%>\% pathling_read_tables()
-data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
+data_source \%>\%
+  ds_read("Patient") \%>\%
+  sparklyr::sdf_nrow()
 }
 }
 \seealso{

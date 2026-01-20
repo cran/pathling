@@ -30,7 +30,9 @@ pathling_connect(
   client_secret = NULL,
   scope = NULL,
   token_expiry_tolerance = 120,
-  accept_language = NULL
+  accept_language = NULL,
+  explain_queries = FALSE,
+  max_unbound_traversal_depth = 10
 )
 }
 \arguments{
@@ -94,6 +96,13 @@ expiry when deciding whether to send it with a terminology request}
 
 \item{accept_language}{The default value of the Accept-Language HTTP header passed to the
 terminology server}
+
+\item{explain_queries}{Setting this option to TRUE will enable additional logging relating
+to the query plan used to execute queries}
+
+\item{max_unbound_traversal_depth}{Maximum depth for self-referencing structure traversals
+in repeat operations. Controls how deeply nested hierarchical data can be flattened
+during projection.}
 }
 \value{
 A Pathling context instance initialized with the specified configuration
@@ -108,7 +117,7 @@ one will be created.
 If a SparkSession is not provided, and one is already running within the current process, it
 will be reused.
 
-It is assumed that the Pathling library API JAR is already on the classpath. If you are running 
+It is assumed that the Pathling library API JAR is already on the classpath. If you are running
 your own cluster, make sure it is on the list of packages.
 }
 \examples{

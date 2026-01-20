@@ -15,13 +15,15 @@ pathling_read_parquet(pc, path)
 A DataSource object that can be used to run queries against the data.
 }
 \description{
-\code{pathling_read_parquet()} creates a data source from a directory containing Parquet tables. 
+\code{pathling_read_parquet()} creates a data source from a directory containing Parquet tables.
 Each table must be named according to the name of the resource type that it stores.
 }
 \examples{
 \dontrun{
-data_source <- pc \%>\% pathling_read_parquet(pathling_examples('parquet'))
-data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
+data_source <- pc \%>\% pathling_read_parquet(pathling_examples("parquet"))
+data_source \%>\%
+  ds_read("Patient") \%>\%
+  sparklyr::sdf_nrow()
 }
 }
 \seealso{

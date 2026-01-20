@@ -10,7 +10,7 @@ pathling_install_spark()
 List with information about the installed version.
 }
 \description{
-Installs the version of Spark/Hadoop defined in the package metadata using the 
+Installs the version of Spark/Hadoop defined in the package metadata using the
 \code{sparklyr::spark_install} function.
 }
 \seealso{

@@ -23,9 +23,13 @@ Creates a data source from a directory containing FHIR bundles.
 }
 \examples{
 \dontrun{
-data_source <- pc \%>\% pathling_read_bundles(pathling_examples('bundle-xml'),
-     c("Patient", "Observation"), MimeType$FHIR_XML)
-data_source \%>\% ds_read('Observation') \%>\% sparklyr::sdf_nrow()
+data_source <- pc \%>\% pathling_read_bundles(
+  pathling_examples("bundle-xml"),
+  c("Patient", "Observation"), MimeType$FHIR_XML
+)
+data_source \%>\%
+  ds_read("Observation") \%>\%
+  sparklyr::sdf_nrow()
 }
 }
 \seealso{

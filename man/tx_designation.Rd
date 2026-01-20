@@ -17,21 +17,25 @@ tx_designation(coding, use = NULL, language = NULL)
 The Column containing the result of the operation (array of strings with designation values).
 }
 \description{
-Takes a Coding column as its input. Returns a Column that contains the values of designations 
+Takes a Coding column as its input. Returns a Column that contains the values of designations
 (strings) for this coding that match the specified use and language. If the language is
 not provided, then all designations with the specified type are returned regardless of
 their language.
 }
 \examples{
 \dontrun{
-# Get the (first) SNOMED CT "Fully specified name" ('900000000000003001')  
+# Get the (first) SNOMED CT "Fully specified name" ('900000000000003001')
 # for the first coding of the Condition resource, in the 'en' language.
-pc \%>\% pathling_example_resource('Condition') \%>\%
-     sparklyr::mutate(
-            id, 
-            designation = (!!tx_designation(code[['coding']][[0]], 
-                     !!tx_to_snomed_coding('900000000000003001'), language = 'en'))[[0]], 
-            .keep='none')
+pc \%>\%
+  pathling_example_resource("Condition") \%>\%
+  sparklyr::mutate(
+    id,
+    designation = (!!tx_designation(code[["coding"]][[0]],
+      !!tx_to_snomed_coding("900000000000003001"),
+      language = "en"
+    ))[[0]],
+    .keep = "none"
+  )
 }
 }
 \seealso{

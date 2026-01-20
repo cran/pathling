@@ -19,8 +19,12 @@ Get data for a resource type from a data source
 }
 \examples{
 \dontrun{
-data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
-data_source \%>\% ds_read('Patient') \%>\% sparklyr::sdf_nrow()
-data_source \%>\% ds_read('Condition') \%>\% sparklyr::sdf_nrow()
+data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
+data_source \%>\%
+  ds_read("Patient") \%>\%
+  sparklyr::sdf_nrow()
+data_source \%>\%
+  ds_read("Condition") \%>\%
+  sparklyr::sdf_nrow()
 }
 }

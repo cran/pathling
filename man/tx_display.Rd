@@ -22,11 +22,13 @@ name associated with the given code.
 \examples{
 \dontrun{
 # Get the display name of the first coding of the Condition resource, with the default language.
-pc \%>\% pathling_example_resource('Condition') \%>\%
-     sparklyr::mutate(
-         id, 
-         display = !!tx_display(code[['coding']][[0]]), 
-         .keep='none')
+pc \%>\%
+  pathling_example_resource("Condition") \%>\%
+  sparklyr::mutate(
+    id,
+    display = !!tx_display(code[["coding"]][[0]]),
+    .keep = "none"
+  )
 }
 }
 \seealso{

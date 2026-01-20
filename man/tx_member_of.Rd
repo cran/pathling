@@ -7,7 +7,7 @@
 tx_member_of(codings, value_set_uri)
 }
 \arguments{
-\item{codings}{A Column containing a struct representation of a Coding or an array of such 
+\item{codings}{A Column containing a struct representation of a Coding or an array of such
 structs.}
 
 \item{value_set_uri}{An identifier for a FHIR ValueSet.}

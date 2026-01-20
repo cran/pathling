@@ -14,7 +14,8 @@ ds_write_parquet(ds, path, save_mode = SaveMode$ERROR)
 \item{save_mode}{The save mode to use when writing the data.}
 }
 \value{
-No return value, called for side effects only.
+A list with element \code{file_infos}, containing a list of files created.
+  Each file has \code{fhir_resource_type} and \code{absolute_url}.
 }
 \description{
 Writes the data from a data source to a directory of Parquet files.
@@ -22,10 +23,10 @@ Writes the data from a data source to a directory of Parquet files.
 \examples{
 \dontshow{if (pathling_is_spark_installed()) withAutoprint(\{ # examplesIf}
 pc <- pathling_connect()
-data_source <- pc \%>\% pathling_read_ndjson(pathling_examples('ndjson'))
+data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
 
 # Write the data to a directory of Parquet files.
-data_source \%>\% ds_write_parquet(file.path(tempdir(), 'parquet'))
+data_source \%>\% ds_write_parquet(file.path(tempdir(), "parquet"))
 
 pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}

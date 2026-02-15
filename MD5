@@ -1,7 +1,7 @@
-acc651c41cd65de9b77fe8b127e1efa2 *DESCRIPTION
-2534ebd6c28e33cae56392c0535bb186 *NAMESPACE
+73aa4d387fe427a1364622bc74c4ace8 *DESCRIPTION
+90112e58832eecb0eda7ee020b7e191d *NAMESPACE
 e38f10ab31a8a010eb15f5f2084626f3 *NEWS.md
-88725d1d531756dfafb96111ab5cea58 *R/context.R
+72611e919d35c5d5e0bdf33c8c31f3f1 *R/context.R
 2434bc61e0319e8dc8e263b4a6309359 *R/data.R
 67bd3e35991386cd53dbb07d36458b84 *R/datasource.R
 3b6f3579a10b968dd1087c95936b59c1 *R/dependencies.R
@@ -50,6 +50,8 @@ d5369c1e264361675527d9976af382ae *man/pathling_disconnect_all.Rd
 2c031da59e26a91e83f49415c3d4da1e *man/pathling_encode_bundle.Rd
 d2c3cb14ea8b810b37861431bd75423a *man/pathling_example_resource.Rd
 d0c375c46148c6d08dfe277b98883932 *man/pathling_examples.Rd
+c2ac15a7fc0eb8ef6bfca600067af196 *man/pathling_fhirpath_to_column.Rd
+9a76deb171d4fefbc896e3e7c88b4d8a *man/pathling_filter.Rd
 352547a9e3d0b0189cff09bc11568695 *man/pathling_install_spark.Rd
 36d928e7d364e92f479761bfd33675d6 *man/pathling_is_spark_installed.Rd
 9725b06529384c0a7b3c49485067beb8 *man/pathling_read_bulk.Rd
@@ -59,9 +61,11 @@ ea957ca18b547892cf560db53045294d *man/pathling_read_delta.Rd
 727752a3e4f5f05182643fcb5ac3c200 *man/pathling_read_ndjson.Rd
 263d9ea06915a9c11ad7f7536632c35e *man/pathling_read_parquet.Rd
 3f2e3d594ad2d3179886c8a76b5aff43 *man/pathling_read_tables.Rd
+c34941782a1bd0f8df01a1d92daa7fc9 *man/pathling_search_to_column.Rd
 ba8ca52d70b48489af09fb6747bc9028 *man/pathling_spark.Rd
 c7fef813a8837d72acd9ed53f6b4846d *man/pathling_spark_info.Rd
 504d52de8b42da1da265f276a60db7e3 *man/pathling_version.Rd
+01549a74987909a51519df3b7eadfe76 *man/pathling_with_column.Rd
 b7577d08a49448ffb5a469fba1549e59 *man/reexports.Rd
 29b8bcd37506cf457e0fc05f208747db *man/to_array.Rd
 e1423cbac484faed1e4394581f7dac10 *man/tx_designation.Rd

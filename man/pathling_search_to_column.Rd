@@ -30,19 +30,19 @@ data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
 patients <- data_source \%>\% ds_read("Patient")
 
 # Filter patients by gender.
-gender_filter <- pathling_search_to_column(pc, "Patient", "gender=male")
-filtered <- sparklyr::spark_dataframe(patients) \%>\%
-  sparklyr::j_invoke("filter", gender_filter) \%>\%
-  sparklyr::sdf_register()
+filtered <- patients \%>\%
+  pathling_filter(pc, "Patient", "gender=male", type = "search")
 
 # Multiple search parameters (AND).
-combined_filter <- pathling_search_to_column(pc, "Patient", "gender=male&active=true")
+filtered <- patients \%>\%
+  pathling_filter(pc, "Patient", "gender=male&active=true", type = "search")
 
 pathling_disconnect(pc)
 }
 }
 \seealso{
 Other context functions: 
+\code{\link{pathling_evaluate_fhirpath}()},
 \code{\link{pathling_fhirpath_to_column}()},
 \code{\link{pathling_filter}()},
 \code{\link{pathling_with_column}()}

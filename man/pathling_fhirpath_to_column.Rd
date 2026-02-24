@@ -32,11 +32,9 @@ pc <- pathling_connect()
 data_source <- pc \%>\% pathling_read_ndjson(pathling_examples("ndjson"))
 patients <- data_source \%>\% ds_read("Patient")
 
-# Boolean expression for filtering.
-gender_filter <- pathling_fhirpath_to_column(pc, "Patient", "gender = 'male'")
-filtered <- sparklyr::spark_dataframe(patients) \%>\%
-  sparklyr::j_invoke("filter", gender_filter) \%>\%
-  sparklyr::sdf_register()
+# Filter patients using a boolean FHIRPath expression.
+filtered <- patients \%>\%
+  pathling_filter(pc, "Patient", "gender = 'male'")
 
 # Value expression for selection.
 name_col <- pathling_fhirpath_to_column(pc, "Patient", "name.given.first()")
@@ -46,6 +44,7 @@ pathling_disconnect(pc)
 }
 \seealso{
 Other context functions: 
+\code{\link{pathling_evaluate_fhirpath}()},
 \code{\link{pathling_filter}()},
 \code{\link{pathling_search_to_column}()},
 \code{\link{pathling_with_column}()}

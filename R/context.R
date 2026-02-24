@@ -294,13 +294,12 @@ pathling_disconnect_all <- function() {
 #' patients <- data_source %>% ds_read("Patient")
 #'
 #' # Filter patients by gender.
-#' gender_filter <- pathling_search_to_column(pc, "Patient", "gender=male")
-#' filtered <- sparklyr::spark_dataframe(patients) %>%
-#'   sparklyr::j_invoke("filter", gender_filter) %>%
-#'   sparklyr::sdf_register()
+#' filtered <- patients %>%
+#'   pathling_filter(pc, "Patient", "gender=male", type = "search")
 #'
 #' # Multiple search parameters (AND).
-#' combined_filter <- pathling_search_to_column(pc, "Patient", "gender=male&active=true")
+#' filtered <- patients %>%
+#'   pathling_filter(pc, "Patient", "gender=male&active=true", type = "search")
 #'
 #' pathling_disconnect(pc)
 #' }
@@ -335,11 +334,9 @@ pathling_search_to_column <- function(pc, resource_type, search_expression) {
 #' data_source <- pc %>% pathling_read_ndjson(pathling_examples("ndjson"))
 #' patients <- data_source %>% ds_read("Patient")
 #'
-#' # Boolean expression for filtering.
-#' gender_filter <- pathling_fhirpath_to_column(pc, "Patient", "gender = 'male'")
-#' filtered <- sparklyr::spark_dataframe(patients) %>%
-#'   sparklyr::j_invoke("filter", gender_filter) %>%
-#'   sparklyr::sdf_register()
+#' # Filter patients using a boolean FHIRPath expression.
+#' filtered <- patients %>%
+#'   pathling_filter(pc, "Patient", "gender = 'male'")
 #'
 #' # Value expression for selection.
 #' name_col <- pathling_fhirpath_to_column(pc, "Patient", "name.given.first()")
@@ -442,4 +439,87 @@ pathling_with_column <- function(df, pc, resource_type, expression, column) {
   sparklyr::spark_dataframe(df) %>%
     j_invoke("withColumn", as.character(column), col) %>%
     sparklyr::sdf_register()
+}
+
+#' Evaluate a FHIRPath expression against a single FHIR resource
+#'
+#' Evaluates a FHIRPath expression against a single FHIR resource provided as a JSON string and
+#' returns materialised typed results. The resource is encoded into a one-row Spark Dataset
+#' internally, and the existing FHIRPath engine is used to evaluate the expression.
+#'
+#' @param pc The PathlingContext object.
+#' @param resource_type A string containing the FHIR resource type code (e.g., "Patient",
+#'   "Observation").
+#' @param resource_json A string containing the FHIR resource as JSON.
+#' @param fhirpath_expression A FHIRPath expression to evaluate (e.g., "name.family",
+#'   "gender = 'male'").
+#' @param context_expression An optional context expression string. If provided, the main
+#'   expression is evaluated once for each result of the context expression. Defaults to NULL.
+#' @param variables An optional named list of variables available via \code{\%variable} syntax.
+#'   Defaults to NULL.
+#'
+#' @return A list with two elements:
+#'   \describe{
+#'     \item{\code{results}}{A list of lists, each containing \code{type} (character) and
+#'       \code{value} (the materialised R value or NULL).}
+#'     \item{\code{expectedReturnType}}{A character string indicating the inferred return type.}
+#'   }
+#'
+#' @importFrom sparklyr invoke j_invoke j_invoke_new spark_connection
+#'
+#' @family context functions
+#'
+#' @export
+#'
+#' @examples \dontrun{
+#' pc <- pathling_connect()
+#' patient_json <- '{"resourceType": "Patient", "id": "example", "gender": "male"}'
+#' result <- pathling_evaluate_fhirpath(pc, "Patient", patient_json, "gender")
+#' for (entry in result$results) {
+#'   cat(entry$type, ": ", entry$value, "\n")
+#' }
+#' pathling_disconnect(pc)
+#' }
+pathling_evaluate_fhirpath <- function(pc, resource_type, resource_json,
+                                       fhirpath_expression,
+                                       context_expression = NULL,
+                                       variables = NULL) {
+  # Convert R named list to a Java HashMap if variables are provided.
+  java_variables <- NULL
+  if (!is.null(variables)) {
+    sc <- spark_connection(pc)
+    java_variables <- j_invoke_new(sc, "java.util.HashMap")
+    for (name in names(variables)) {
+      invoke(java_variables, "put", name, variables[[name]])
+    }
+  }
+
+  jresult <- invoke(
+    pc, "evaluateFhirPath",
+    as.character(resource_type),
+    as.character(resource_json),
+    as.character(fhirpath_expression),
+    context_expression,
+    java_variables
+  )
+
+  # Convert Java SingleInstanceEvaluationResult to an R list.
+  jtyped_values <- invoke(jresult, "getResults")
+  size <- jtyped_values %>% invoke("size")
+  results <- if (size > 0L) {
+    lapply(seq_len(size), function(i) {
+      jtv <- jtyped_values %>% invoke("get", as.integer(i - 1))
+      list(
+        type = jtv %>% invoke("getType"),
+        value = jtv %>% invoke("getValue")
+      )
+    })
+  } else {
+    list()
+  }
+
+  list(
+    results = results,
+    expectedReturnType = invoke(jresult, "getExpectedReturnType")
+  )
 }

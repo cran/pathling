@@ -47,6 +47,7 @@ pathling_disconnect(pc)
 }
 \seealso{
 Other context functions: 
+\code{\link{pathling_evaluate_fhirpath}()},
 \code{\link{pathling_fhirpath_to_column}()},
 \code{\link{pathling_filter}()},
 \code{\link{pathling_search_to_column}()}

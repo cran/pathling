@@ -1,4 +1,4 @@
-6bd1d8754c27470fac3c5ce162c6ad81 *DESCRIPTION
+d34e4ebeb201fdacdda1e0e5c1b46b76 *DESCRIPTION
 981d85bce296f106de018ec7e05b6ab4 *NAMESPACE
 e38f10ab31a8a010eb15f5f2084626f3 *NEWS.md
 6a65979aadd1369a43e0e252f5e6fb9a *R/context.R
@@ -12,7 +12,7 @@ ef3dc8106a618af4d27d475a2db3d0a3 *R/etc.R
 c2c2a15e034a2d3a94a0e269146653c8 *R/rexport-sparklyr.R
 4416a785d97b2a8d0fe8135791f0580b *R/udfs.R
 e5aac4ad93c1c6c5fdfca60119852276 *R/utils.R
-9661c97b6e84fe17b906ae13d5738809 *R/view.R
+188a7c99087da18779a5c271cb75b5b3 *R/view.R
 df8f16bf234d9ccfc631672eca51fb1c *README.md
 0fd484e6fc813bba6134f032c8ce3e07 *data/conditions.rda
 75c5475fe21b1d79ae042cd42612bc38 *inst/CITATION
@@ -38,7 +38,7 @@ fd79a7408f176d7d828ed38929241ecd *man/Equivalence.Rd
 740d72e063fb2c24b093d8ab7a993224 *man/Version.Rd
 3355d62ce47bb81c3cc04261b208a2c1 *man/conditions.Rd
 ad03e2c0ca3a8ec522742e1f7ec4bc64 *man/ds_read.Rd
-6007605107818c27a1312d28194bd175 *man/ds_view.Rd
+4194d542b6d362ad6fdeee6a18c12986 *man/ds_view.Rd
 949fbb9161f569a085d17552337d139f *man/ds_write_delta.Rd
 47d4c764dd6d44bdea5257d257051d7f *man/ds_write_ndjson.Rd
 fd22bd7306622d5340bdbe391a2604bd *man/ds_write_parquet.Rd

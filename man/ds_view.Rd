@@ -8,7 +8,7 @@ ds_view(
   ds,
   resource,
   select = NULL,
-  constants = NULL,
+  constant = NULL,
   where = NULL,
   json = NULL
 )
@@ -20,7 +20,7 @@ ds_view(
 
 \item{select}{A list of columns and nested selects to include in the view. Each element should be a list with appropriate structure.}
 
-\item{constants}{An optional list of constants that can be used in FHIRPath expressions.}
+\item{constant}{An optional list of constants that can be used in FHIRPath expressions.}
 
 \item{where}{An optional list of FHIRPath expressions that can be used to filter the view.}
 

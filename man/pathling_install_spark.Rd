@@ -14,9 +14,9 @@ Installs the version of Spark/Hadoop defined in the package metadata using the
 \code{sparklyr::spark_install} function.
 }
 \seealso{
-Other installation functions: 
-\code{\link{pathling_is_spark_installed}()},
-\code{\link{pathling_spark_info}()},
-\code{\link{pathling_version}()}
+Other installation functions:
+\code{\link[=pathling_is_spark_installed]{pathling_is_spark_installed()}},
+\code{\link[=pathling_spark_info]{pathling_spark_info()}},
+\code{\link[=pathling_version]{pathling_version()}}
 }
 \concept{installation functions}

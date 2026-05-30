@@ -13,9 +13,9 @@ The version of the Pathling R library.
 Get version of Pathling
 }
 \seealso{
-Other installation functions: 
-\code{\link{pathling_install_spark}()},
-\code{\link{pathling_is_spark_installed}()},
-\code{\link{pathling_spark_info}()}
+Other installation functions:
+\code{\link[=pathling_install_spark]{pathling_install_spark()}},
+\code{\link[=pathling_is_spark_installed]{pathling_is_spark_installed()}},
+\code{\link[=pathling_spark_info]{pathling_spark_info()}}
 }
 \concept{installation functions}

@@ -27,7 +27,7 @@ pathling_example_resource(pc, "Condition")
 }
 }
 \seealso{
-Other example functions: 
-\code{\link{pathling_examples}()}
+Other example functions:
+\code{\link[=pathling_examples]{pathling_examples()}}
 }
 \concept{example functions}

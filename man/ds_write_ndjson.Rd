@@ -36,9 +36,9 @@ data_source \%>\% ds_write_ndjson(file.path(tempdir(), "ndjson"))
 \seealso{
 \href{https://pathling.csiro.au/docs/libraries/io#ndjson-1}{Pathling documentation - Writing NDJSON}
 
-Other data sink functions: 
-\code{\link{ds_write_delta}()},
-\code{\link{ds_write_parquet}()},
-\code{\link{ds_write_tables}()}
+Other data sink functions:
+\code{\link[=ds_write_delta]{ds_write_delta()}},
+\code{\link[=ds_write_parquet]{ds_write_parquet()}},
+\code{\link[=ds_write_tables]{ds_write_tables()}}
 }
 \concept{data sink functions}

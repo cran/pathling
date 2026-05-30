@@ -16,9 +16,9 @@ The Spark connection associated with this Pathling context.
 Returns the Spark connection associated with a Pathling context.
 }
 \seealso{
-Other context lifecycle functions: 
-\code{\link{pathling_connect}()},
-\code{\link{pathling_disconnect}()},
-\code{\link{pathling_disconnect_all}()}
+Other context lifecycle functions:
+\code{\link[=pathling_connect]{pathling_connect()}},
+\code{\link[=pathling_disconnect]{pathling_disconnect()}},
+\code{\link[=pathling_disconnect_all]{pathling_disconnect_all()}}
 }
 \concept{context lifecycle functions}

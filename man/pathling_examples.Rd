@@ -19,7 +19,7 @@ Construct the path to the package example data in a platform-independent way.
 pathling_examples("ndjson", "Condition.ndjson")
 }
 \seealso{
-Other example functions: 
-\code{\link{pathling_example_resource}()}
+Other example functions:
+\code{\link[=pathling_example_resource]{pathling_example_resource()}}
 }
 \concept{example functions}

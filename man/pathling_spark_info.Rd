@@ -20,9 +20,9 @@ A list containing the following keys:
 Returns the versions of Spark and Spark packages used by the Pathling R library.
 }
 \seealso{
-Other installation functions: 
-\code{\link{pathling_install_spark}()},
-\code{\link{pathling_is_spark_installed}()},
-\code{\link{pathling_version}()}
+Other installation functions:
+\code{\link[=pathling_install_spark]{pathling_install_spark()}},
+\code{\link[=pathling_is_spark_installed]{pathling_is_spark_installed()}},
+\code{\link[=pathling_version]{pathling_version()}}
 }
 \concept{installation functions}

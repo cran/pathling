@@ -34,11 +34,11 @@ pc \%>\%
 \seealso{
 \href{https://pathling.csiro.au/docs/libraries/terminology#multi-language-support}{Pathling documentation - Multi-language support}
 
-Other terminology functions: 
-\code{\link{tx_member_of}()},
-\code{\link{tx_property_of}()},
-\code{\link{tx_subsumed_by}()},
-\code{\link{tx_subsumes}()},
-\code{\link{tx_translate}()}
+Other terminology functions:
+\code{\link[=tx_member_of]{tx_member_of()}},
+\code{\link[=tx_property_of]{tx_property_of()}},
+\code{\link[=tx_subsumed_by]{tx_subsumed_by()}},
+\code{\link[=tx_subsumes]{tx_subsumes()}},
+\code{\link[=tx_translate]{tx_translate()}}
 }
 \concept{terminology functions}

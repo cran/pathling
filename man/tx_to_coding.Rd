@@ -38,9 +38,9 @@ condition_df \%>\% sparklyr::mutate(
 \seealso{
 \href{https://hl7.org/fhir/R4/datatypes.html#Coding}{FHIR R4 - Coding}
 
-Other terminology helpers: 
-\code{\link{tx_to_ecl_value_set}()},
-\code{\link{tx_to_loinc_coding}()},
-\code{\link{tx_to_snomed_coding}()}
+Other terminology helpers:
+\code{\link[=tx_to_ecl_value_set]{tx_to_ecl_value_set()}},
+\code{\link[=tx_to_loinc_coding]{tx_to_loinc_coding()}},
+\code{\link[=tx_to_snomed_coding]{tx_to_snomed_coding()}}
 }
 \concept{terminology helpers}

@@ -29,12 +29,12 @@ data_source \%>\%
 \seealso{
 \href{https://pathling.csiro.au/docs/libraries/io#parquet}{Pathling documentation - Reading Parquet}
 
-Other data source functions: 
-\code{\link{pathling_read_bulk}()},
-\code{\link{pathling_read_bundles}()},
-\code{\link{pathling_read_datasets}()},
-\code{\link{pathling_read_delta}()},
-\code{\link{pathling_read_ndjson}()},
-\code{\link{pathling_read_tables}()}
+Other data source functions:
+\code{\link[=pathling_read_bulk]{pathling_read_bulk()}},
+\code{\link[=pathling_read_bundles]{pathling_read_bundles()}},
+\code{\link[=pathling_read_datasets]{pathling_read_datasets()}},
+\code{\link[=pathling_read_delta]{pathling_read_delta()}},
+\code{\link[=pathling_read_ndjson]{pathling_read_ndjson()}},
+\code{\link[=pathling_read_tables]{pathling_read_tables()}}
 }
 \concept{data source functions}

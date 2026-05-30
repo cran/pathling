@@ -43,10 +43,10 @@ pathling_disconnect(pc)
 }
 }
 \seealso{
-Other context functions: 
-\code{\link{pathling_evaluate_fhirpath}()},
-\code{\link{pathling_filter}()},
-\code{\link{pathling_search_to_column}()},
-\code{\link{pathling_with_column}()}
+Other context functions:
+\code{\link[=pathling_evaluate_fhirpath]{pathling_evaluate_fhirpath()}},
+\code{\link[=pathling_filter]{pathling_filter()}},
+\code{\link[=pathling_search_to_column]{pathling_search_to_column()}},
+\code{\link[=pathling_with_column]{pathling_with_column()}}
 }
 \concept{context functions}

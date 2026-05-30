@@ -37,9 +37,9 @@ pathling_disconnect(pc)
 
 \code{\link{SaveMode}}
 
-Other data sink functions: 
-\code{\link{ds_write_ndjson}()},
-\code{\link{ds_write_parquet}()},
-\code{\link{ds_write_tables}()}
+Other data sink functions:
+\code{\link[=ds_write_ndjson]{ds_write_ndjson()}},
+\code{\link[=ds_write_parquet]{ds_write_parquet()}},
+\code{\link[=ds_write_tables]{ds_write_tables()}}
 }
 \concept{data sink functions}

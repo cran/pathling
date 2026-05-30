@@ -49,11 +49,11 @@ pc \%>\%
 
 \href{https://pathling.csiro.au/docs/libraries/terminology#retrieving-properties}{Pathling documentation - Retrieving properties}
 
-Other terminology functions: 
-\code{\link{tx_display}()},
-\code{\link{tx_member_of}()},
-\code{\link{tx_subsumed_by}()},
-\code{\link{tx_subsumes}()},
-\code{\link{tx_translate}()}
+Other terminology functions:
+\code{\link[=tx_display]{tx_display()}},
+\code{\link[=tx_member_of]{tx_member_of()}},
+\code{\link[=tx_subsumed_by]{tx_subsumed_by()}},
+\code{\link[=tx_subsumes]{tx_subsumes()}},
+\code{\link[=tx_translate]{tx_translate()}}
 }
 \concept{terminology functions}

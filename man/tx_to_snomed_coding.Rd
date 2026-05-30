@@ -33,9 +33,9 @@ condition_df \%>\% sparklyr::mutate(snomedCoding = !!tx_to_snomed_coding(CODE), 
 }
 }
 \seealso{
-Other terminology helpers: 
-\code{\link{tx_to_coding}()},
-\code{\link{tx_to_ecl_value_set}()},
-\code{\link{tx_to_loinc_coding}()}
+Other terminology helpers:
+\code{\link[=tx_to_coding]{tx_to_coding()}},
+\code{\link[=tx_to_ecl_value_set]{tx_to_ecl_value_set()}},
+\code{\link[=tx_to_loinc_coding]{tx_to_loinc_coding()}}
 }
 \concept{terminology helpers}

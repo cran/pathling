@@ -49,9 +49,9 @@ unlink(temp_dir_path, recursive = TRUE)
 
 \code{\link{SaveMode}}
 
-Other data sink functions: 
-\code{\link{ds_write_delta}()},
-\code{\link{ds_write_ndjson}()},
-\code{\link{ds_write_parquet}()}
+Other data sink functions:
+\code{\link[=ds_write_delta]{ds_write_delta()}},
+\code{\link[=ds_write_ndjson]{ds_write_ndjson()}},
+\code{\link[=ds_write_parquet]{ds_write_parquet()}}
 }
 \concept{data sink functions}

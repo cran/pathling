@@ -54,11 +54,11 @@ pc \%>\%
 
 \href{https://pathling.csiro.au/docs/libraries/terminology#concept-translation}{Pathling documentation - Concept translation}
 
-Other terminology functions: 
-\code{\link{tx_display}()},
-\code{\link{tx_member_of}()},
-\code{\link{tx_property_of}()},
-\code{\link{tx_subsumed_by}()},
-\code{\link{tx_subsumes}()}
+Other terminology functions:
+\code{\link[=tx_display]{tx_display()}},
+\code{\link[=tx_member_of]{tx_member_of()}},
+\code{\link[=tx_property_of]{tx_property_of()}},
+\code{\link[=tx_subsumed_by]{tx_subsumed_by()}},
+\code{\link[=tx_subsumes]{tx_subsumes()}}
 }
 \concept{terminology functions}

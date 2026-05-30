@@ -37,7 +37,7 @@ pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-Other encoding functions: 
-\code{\link{pathling_encode_bundle}()}
+Other encoding functions:
+\code{\link[=pathling_encode_bundle]{pathling_encode_bundle()}}
 }
 \concept{encoding functions}

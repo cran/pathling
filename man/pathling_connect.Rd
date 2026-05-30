@@ -131,9 +131,9 @@ spark <- pathling_spark(pc)
 }
 }
 \seealso{
-Other context lifecycle functions: 
-\code{\link{pathling_disconnect}()},
-\code{\link{pathling_disconnect_all}()},
-\code{\link{pathling_spark}()}
+Other context lifecycle functions:
+\code{\link[=pathling_disconnect]{pathling_disconnect()}},
+\code{\link[=pathling_disconnect_all]{pathling_disconnect_all()}},
+\code{\link[=pathling_spark]{pathling_spark()}}
 }
 \concept{context lifecycle functions}

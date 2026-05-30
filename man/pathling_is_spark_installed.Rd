@@ -13,9 +13,9 @@ pathling_is_spark_installed()
 Checks if the version of Spark/Hadoop required by Pathling is installed.
 }
 \seealso{
-Other installation functions: 
-\code{\link{pathling_install_spark}()},
-\code{\link{pathling_spark_info}()},
-\code{\link{pathling_version}()}
+Other installation functions:
+\code{\link[=pathling_install_spark]{pathling_install_spark()}},
+\code{\link[=pathling_spark_info]{pathling_spark_info()}},
+\code{\link[=pathling_version]{pathling_version()}}
 }
 \concept{installation functions}

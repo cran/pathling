@@ -40,7 +40,7 @@ pathling_disconnect(pc)
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-Other encoding functions: 
-\code{\link{pathling_encode}()}
+Other encoding functions:
+\code{\link[=pathling_encode]{pathling_encode()}}
 }
 \concept{encoding functions}

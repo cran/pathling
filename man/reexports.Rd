@@ -11,6 +11,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{sparklyr}{\code{\link[sparklyr:pipe]{\%>\%}}}
+  \item{sparklyr}{\code{\link[sparklyr:\%>\%]{\%>\%}}}
 }}
 

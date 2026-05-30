@@ -13,9 +13,9 @@ No return value, called for side effects only.
 Disconnect all Spark connections
 }
 \seealso{
-Other context lifecycle functions: 
-\code{\link{pathling_connect}()},
-\code{\link{pathling_disconnect}()},
-\code{\link{pathling_spark}()}
+Other context lifecycle functions:
+\code{\link[=pathling_connect]{pathling_connect()}},
+\code{\link[=pathling_disconnect]{pathling_disconnect()}},
+\code{\link[=pathling_spark]{pathling_spark()}}
 }
 \concept{context lifecycle functions}

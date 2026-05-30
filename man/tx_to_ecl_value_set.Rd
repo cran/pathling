@@ -25,9 +25,9 @@ tx_to_ecl_value_set("<<373265006 |Analgesic (substance)|")
 \seealso{
 \href{https://terminology.hl7.org/SNOMEDCT.html#snomed-ct-implicit-value-sets}{Using SNOMED CT with HL7 Standards - Implicit Value Sets}
 
-Other terminology helpers: 
-\code{\link{tx_to_coding}()},
-\code{\link{tx_to_loinc_coding}()},
-\code{\link{tx_to_snomed_coding}()}
+Other terminology helpers:
+\code{\link[=tx_to_coding]{tx_to_coding()}},
+\code{\link[=tx_to_loinc_coding]{tx_to_loinc_coding()}},
+\code{\link[=tx_to_snomed_coding]{tx_to_snomed_coding()}}
 }
 \concept{terminology helpers}

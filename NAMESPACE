@@ -25,6 +25,8 @@ export(pathling_example_resource)
 export(pathling_examples)
 export(pathling_fhirpath_to_column)
 export(pathling_filter)
+export(pathling_import_fhir_terminology)
+export(pathling_import_snomed)
 export(pathling_install_spark)
 export(pathling_is_spark_installed)
 export(pathling_read_bulk)
@@ -53,14 +55,15 @@ export(tx_translate)
 importFrom(jsonlite,toJSON)
 importFrom(purrr,map)
 importFrom(rlang,.data)
-importFrom(rlang,`%||%`)
-importFrom(sparklyr,"%>%")
-importFrom(sparklyr,invoke)
-importFrom(sparklyr,invoke_static)
-importFrom(sparklyr,j_invoke)
-importFrom(sparklyr,j_invoke_new)
-importFrom(sparklyr,j_invoke_static)
-importFrom(sparklyr,sdf_register)
-importFrom(sparklyr,spark_connection)
-importFrom(sparklyr,spark_dataframe)
+importFrom(sparklyr,
+  "%>%",
+  invoke,
+  invoke_static,
+  j_invoke,
+  j_invoke_new,
+  j_invoke_static,
+  sdf_register,
+  spark_connection,
+  spark_dataframe
+)
 importFrom(utils,URLencode)

@@ -31,6 +31,11 @@ pathling_connect(
   scope = NULL,
   token_expiry_tolerance = 120,
   accept_language = NULL,
+  terminology_mode = "server",
+  terminology_storage_path = NULL,
+  default_snomed_edition = NULL,
+  expansion_cache_size = 100,
+  dialect_aliases = NULL,
   explain_queries = FALSE,
   max_unbound_traversal_depth = 10
 )
@@ -95,7 +100,25 @@ terminology server}
 expiry when deciding whether to send it with a terminology request}
 
 \item{accept_language}{The default value of the Accept-Language HTTP header passed to the
-terminology server}
+terminology server. In local mode this selects the preferred display and designation language.}
+
+\item{terminology_mode}{The terminology evaluation backend, either "server" (the default) or
+"local" (evaluating against a local terminology store with no network access)}
+
+\item{terminology_storage_path}{The location of the local terminology store, required when
+terminology_mode is "local"}
+
+\item{default_snomed_edition}{The SNOMED CT module identifier used to disambiguate an unversioned
+SNOMED reference when the local store holds multiple editions}
+
+\item{expansion_cache_size}{The maximum number of value set expansions cached per executor in
+local mode}
+
+\item{dialect_aliases}{Additional dialect tags recognised in local mode when a display or
+designation is requested in a particular language, given as a named character vector or list
+mapping a language tag to the identifier of the SNOMED CT language reference set that serves it
+(for example c("en-NZ" = "271000210107")). An entry for a tag that is already recognised
+replaces the built-in mapping for it. At most ten aliases can be configured from R}
 
 \item{explain_queries}{Setting this option to TRUE will enable additional logging relating
 to the query plan used to execute queries}
